@@ -31,9 +31,7 @@ function displayForecast(response) {
       forecastHTML +
       ` 
       <div class="col-2">
-                <div class="weather-forecast-date">
-                ${day}
-                </div>
+                <div class="weather-forecast-date">${day}</div>
                 <img
                   src="http://openweathermap.org/img/wn/04d@2x.png"
                   alt=""
@@ -53,7 +51,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "cf1ef184bc4f8c6749a14597b0b5efe6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=matric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
